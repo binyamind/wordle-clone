@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+body{
+    background: var(--defualt);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* height: 100vh; */
+}
+:root{
+    --defualt:#121213;
+    --empty:#3a3a3c;
+    --wrong:#b59f3b;
+    --right:#538d4e;
+    --key:#818384;
+}
+.warper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 0;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    /* flex-wrap: wrap; */
+    /* flex-grow: 1; */
+}
+.header{
+    width: 100%;
+    border-bottom: 1px solid gray;
+    height: 3.5rem;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    margin: 12px;
+}
+h1{
+    color: white;
+}
+.game-board{
+    display: grid;
+    justify-content: center;
+    place-items: center;  
+    width: 60%;
+    /* height: 35vh; */
+    margin: auto 0;
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(5, auto);
+    /* margin-top: 6.5rem; */
+    padding: 10px;
+}
+.box{
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--empty);
+    margin: 4px;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    font-family:Claer Sans;
+    font-weight: 600;
+    caret-color: transparent;
+   
+}
+.box.right,.key-board-letter.right{
+    background: var(--right);
+}
+.box.wrong ,.key-board-letter.wrong{
+    background: var(--wrong);
+}
+.box.empty,.key-board-letter.empty{
+    background: var(--empty);
+}
+@keyframes flip{
+    0%{
+        transform: scaleY(1);
+    }
+    50%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}
+.animate{
+    animation: flip 0.5s ease-in-out;
+}
+.key-board{
+    width: 90%; 
+    height: 25vh;
+    display: grid;
+    color: white;
+    grid-template-columns: repeat(20,minmax(0,1.35em));
+    grid-auto-rows: 4rem;
+    gap: .25em;
+    justify-content: center;
+
+}
+.key-board-letter{
+    grid-column: span 2;
+    border-radius: 4px;
+    background: linear-gradient(0.25turn,var(--key),var(--key), var(--key));
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.keyRow{
+    width: 80%;
+    height: 250px;
+}
+#x,#ENTER{
+    grid-column: span 3;
+}
+.wincard{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top:70px;
+    width: 250px;
+    height: 50px;
+    border-radius: 6px;
+    background: #FAF9F6;
+    overflow: auto;
+    background: linear-gradient(0.25turn,#FAF9F6,#FAF9F6, #FAF9e1);
+}
+.win{
+    text-align: center;
+    margin: auto 0;
+    color: white;
+    z-index: 1;
+    background-color: transparent;
+    color: var(--key);
+    font-size: large;
+
+}
+.remove{
+    transition: all 2s;
+}
