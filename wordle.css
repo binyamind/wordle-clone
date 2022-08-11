@@ -159,20 +159,22 @@ h1 {
   }
   .game-board {
     display: grid;
-    justify-content: center;
-    place-items: center;
+
+    place-items: start end;
     /* width: 60%; */
-    height: 63vh;
+    height: 53vh;
     margin: auto 0;
     grid-template-rows: repeat(6, auto);
     grid-template-columns: repeat(5, auto);
     /* margin-top: 6.5rem; */
     /* padding: 10px; */
+    margin: 0;
+    padding: 0;
   }
 
   .key-board {
     /* width: 90%;  */
-    height: 35vh;
+    height: 30vh;
     display: grid;
     color: white;
     grid-template-columns: repeat(20, minmax(0, 1.35em));
