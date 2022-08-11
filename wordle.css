@@ -24,7 +24,7 @@ body{
     align-items: center;
     margin: 0 0;
     flex-direction: column;
-    width: 100%;
+    /* width: 100%; */
     height: 100vh;
     /* flex-wrap: wrap; */
     /* flex-grow: 1; */
@@ -45,7 +45,7 @@ h1{
     display: grid;
     justify-content: center;
     place-items: center;  
-    width: 60%;
+    /* width: 60%; */
     /* height: 35vh; */
     margin: auto 0;
     grid-template-rows: repeat(6, auto);
@@ -92,7 +92,7 @@ h1{
     animation: flip 0.5s ease-in-out;
 }
 .key-board{
-    width: 90%; 
+    /* width: 90%;  */
     height: 25vh;
     display: grid;
     color: white;
@@ -100,7 +100,7 @@ h1{
     grid-auto-rows: 4rem;
     gap: .25em;
     justify-content: center;
-
+    margin: 10px;
 }
 .key-board-letter{
     grid-column: span 2;
@@ -141,4 +141,9 @@ h1{
 }
 .remove{
     transition: all 2s;
+}
+@media (width:400px){
+   #ENTER{
+    font-size: 1.1rem;
+   }
 }
